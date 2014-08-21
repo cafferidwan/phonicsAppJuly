@@ -216,6 +216,13 @@ public class IndividualAccountDescription extends Activity
 		       {
 		              Toast.makeText(IndividualAccountDescription.this, 
 		                    "You Clicked at " +text2[+ position], Toast.LENGTH_SHORT).show();
+		              
+		              if(position==3)
+		              {
+		            	  finish();
+			              startActivity(new Intent(getBaseContext(), HandWritingMain.class));
+		              }
+		              
 		       }
 		});
 		

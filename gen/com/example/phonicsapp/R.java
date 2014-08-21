@@ -29,33 +29,40 @@ public final class R {
         public static final int LinearLayout02=0x7f090001;
         public static final int adminPress=0x7f090003;
         public static final int btn=0x7f090002;
-        public static final int btnGame=0x7f090010;
-        public static final int btnHandWriting=0x7f090011;
-        public static final int fl=0x7f090009;
+        public static final int btnGame=0x7f090015;
+        public static final int btnHandWriting=0x7f090016;
+        public static final int btn_cancel=0x7f09000d;
+        public static final int btn_login=0x7f09000c;
+        public static final int et_password=0x7f09000b;
+        public static final int et_username=0x7f09000a;
+        public static final int fl=0x7f09000e;
         public static final int gridview=0x7f090000;
-        public static final int imageView1=0x7f09000a;
+        public static final int imageView1=0x7f09000f;
         public static final int imgview=0x7f090004;
-        public static final int item_image=0x7f09000b;
-        public static final int item_text=0x7f09000c;
+        public static final int item_image=0x7f090010;
+        public static final int item_text=0x7f090011;
+        public static final int listView1=0x7f090007;
         public static final int list_id=0x7f090006;
-        public static final int mainListView=0x7f09000f;
-        public static final int rowTextView=0x7f09000e;
+        public static final int mainListView=0x7f090014;
+        public static final int rowTextView=0x7f090013;
         public static final int text=0x7f090005;
-        public static final int tv1=0x7f09000d;
-        public static final int txt1=0x7f090007;
-        public static final int txt2=0x7f090008;
+        public static final int tv1=0x7f090012;
+        public static final int txt1=0x7f090008;
+        public static final int txt2=0x7f090009;
     }
     public static final class layout {
         public static final int account_page=0x7f030000;
         public static final int activity_main1=0x7f030001;
         public static final int customgrid=0x7f030002;
         public static final int details_list=0x7f030003;
-        public static final int list_single=0x7f030004;
-        public static final int main_camera=0x7f030005;
-        public static final int row_grid=0x7f030006;
-        public static final int student_description=0x7f030007;
-        public static final int student_row=0x7f030008;
-        public static final int student_view=0x7f030009;
+        public static final int handwriting_list=0x7f030004;
+        public static final int list_single=0x7f030005;
+        public static final int login_dialog=0x7f030006;
+        public static final int main_camera=0x7f030007;
+        public static final int row_grid=0x7f030008;
+        public static final int student_description=0x7f030009;
+        public static final int student_row=0x7f03000a;
+        public static final int student_view=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f080000;

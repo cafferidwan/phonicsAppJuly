@@ -62,6 +62,7 @@ public class AdminPanel extends Activity
 	             currentAccount = (String)adapter.getItemAtPosition(position); 
 	             
 	             Toast.makeText(getBaseContext(), currentAccount, Toast.LENGTH_SHORT).show();
+	             
 	             startActivity(new Intent(getBaseContext(), IndividualAccountDescription.class));
 	       }
 	    });

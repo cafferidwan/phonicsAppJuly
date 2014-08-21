@@ -34,7 +34,13 @@ import org.andengine.util.debug.Debug;
 import com.example.phonicsapp.HandWriting.Animation.AnimationDrawTutorial;
 import com.example.phonicsapp.HandWriting.Objects.createObjects;
 import com.example.phonicsapp.HandWriting.ScreenShoot.BitmapTextureAtlasSource;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.media.MediaPlayer;
+import android.preference.PreferenceManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Display;
 
@@ -195,6 +201,8 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	private BuildableBitmapTextureAtlas mAnimatedSplashBitmapTextureAtlas;
 	public static TiledTextureRegion mAnimatedSplashTextureRegion;
 	public AnimatedSprite animatedSplash;
+	
+	public static GameActivity gameActivityInstance;
 
 	@Override
 	public EngineOptions onCreateEngineOptions()
@@ -252,6 +260,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 			throws Exception 
 	{
 		// TODO Auto-generated method stub
+		gameActivityInstance=this;
 		initSplashScene();
         pOnCreateSceneCallback.onCreateSceneFinished(this.splashScene);
 	}
@@ -377,6 +386,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 //
 //		//create number with cursor
 //		//AnimationDrawTutorial.createNumberSpriteAndCursor(2);
+		
+		String imie = getDeviceIMEI();
+		savePreferences("imie", imie);
 	}
 
 	// to change the current main scene
@@ -393,4 +405,25 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		return Touch.touchEvent(pSceneTouchEvent);
 	}
 
+	public String getDeviceIMEI() 
+	{
+		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		String device_id = tm.getDeviceId();
+
+		return device_id;
+	}
+	
+	public static String loadSavedPreferences(String key)
+	{
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(gameActivityInstance);
+		return sharedPreferences.getString(key, "");
+	}
+
+	public static void savePreferences(String key, String value)
+	{
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(gameActivityInstance);
+		Editor editor = sharedPreferences.edit();
+		editor.putString(key, value);
+		editor.commit();
+	}
 }

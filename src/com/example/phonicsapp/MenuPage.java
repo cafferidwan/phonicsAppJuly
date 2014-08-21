@@ -179,6 +179,7 @@ public class MenuPage extends SimpleBaseGameActivity implements IOnSceneTouchLis
 		menuBackground.setWidth(CAMERA_WIDTH);
 		menuScene.attachChild(menuBackground);
 		
+		
 		//setAllMenuLetters
 		SetMenuLetters.setAllMenuLetters();
 		
